@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Udacity Attendance App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">  
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <!-- ko foreach: attendance -->
+      <th data-bind="html: $data"></th>
+      <!-- /ko -->
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: studentList">
+    <tr>
+      <td data-bind="html: name"></td>
+      <!-- ko foreach: days -->
+      <td data-bind="html: $data">
+      </td>
+      <!-- /ko -->
+    </tr>
+  </tbody>
+</table>
+
+  <script src="js/lib/knockout-3.2.0.js"></script>
+  <script src="js/app.js"></script>  
+</body>
+</html>
