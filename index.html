@@ -4,10 +4,11 @@
   <title>Udacity Attendance App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 
+<h2>Student Attendance</h2>
 <table>
   <thead>
     <tr>
@@ -21,12 +22,16 @@
     <tr>
       <td data-bind="html: name"></td>
       <!-- ko foreach: days -->
-      <td data-bind="html: $data">
+      <td>
+      <input type="checkbox" data-bind="checked: isChecked" />
       </td>
       <!-- /ko -->
     </tr>
   </tbody>
 </table>
+
+<!-- tip: use to debug data values -->
+<!-- <pre data-bind="text: ko.toJSON($data, null, 2)"></pre> -->
 
   <script src="js/lib/knockout-3.2.0.js"></script>
   <script src="js/app.js"></script>  
